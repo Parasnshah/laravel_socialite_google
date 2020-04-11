@@ -9,4 +9,8 @@
 
 ## Laravel Socialite Google Login
 
+Now, You need to required the CLIENT ID and CLIENT SECRET to add social google login button in the laravel web applications. Lets go to https://console.developers.google.com/ and create a project.
+
+Enjoy
+
 
