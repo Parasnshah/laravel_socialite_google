@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
  use Validator,Redirect,Response,File;
  use Socialite;
  use App\User;
+ use Auth;
 
  class SocialiteController extends Controller
  {
@@ -15,14 +16,15 @@ namespace App\Http\Controllers;
  
  public function redirect($provider)
  {
-     return Socialite::driver($provider)->redirect();
+     //return Socialite::driver($provider)->redirect();
+     return Socialite::driver($provider)->scopes(['email'])->redirect(); 
  }
 
  public function callback($provider)
  {
    $getInfo = Socialite::driver($provider)->user(); 
    $user = $this->create($getInfo,$provider); 
-   auth()->login($user); 
+   Auth::login($user, true);
    return redirect()->to('/home');
  }
 

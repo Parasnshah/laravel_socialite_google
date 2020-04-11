@@ -35,7 +35,7 @@ return [
     ],
 
    'google' => [
-     'client_id' => 'your id',
+     'client_id' => 'your key',
      'client_secret' => 'your secret',
      'redirect' => 'http://127.0.0.1:8000/callback/google',
    ], 
